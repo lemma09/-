@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="om">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEMMA ASEFA KEBEDE - Portfolio</title>
+    <title>Lemma Asefa Kebede - Portfolio Presentation</title>
     <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-yellow: #f4b400;
+            --dark-charcoal: #2b303a;
+            --light-bg: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-dark: #1e222a;
+            --text-muted: #6c757d;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,175 +24,437 @@
         }
 
         body {
-            /* Background Image */
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-color: #080705;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #ffffff;
-            padding: 20px;
-        }
-
-        /* Premium Gold Glassmorphism Card Container */
-        .container {
-            background: linear-gradient(145deg, rgba(25, 20, 8, 0.88), rgba(10, 8, 3, 0.94));
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            padding: 35px 25px;
-            border-radius: 24px;
-            text-align: center;
-            max-width: 480px;
-            width: 100%;
-            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.35), 0 0 15px rgba(255, 215, 0, 0.2);
-            border: 1px solid rgba(212, 175, 55, 0.55);
-        }
-
-        /* Profile Picture with Golden Glow Border */
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #D4AF37;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
-            margin-bottom: 18px;
-        }
-
-        /* Gold Metallic Title Text */
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #FFF5C0, #D4AF37, #AA771C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Gold Expertise Badges Grid */
-        .roles-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .role-card {
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.35);
-            padding: 12px 8px;
-            border-radius: 12px;
+            background-color: #0f1217;
+            color: var(--text-dark);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
+            padding: 40px 20px;
+            gap: 40px;
         }
 
-        .role-card:hover {
-            background: rgba(212, 175, 55, 0.22);
-            border-color: #FFD700;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
-        }
-
-        .role-card i {
-            font-size: 22px;
-            color: #FFD700;
-        }
-
-        .role-card span {
-            font-size: 11px;
-            font-weight: 600;
-            color: #F8F1E5;
-        }
-
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
-            margin: 18px 0;
-        }
-
-        /* Gold Social Media Buttons */
-        .social-icons {
+        /* Slide Container */
+        .slide {
+            width: 100%;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9;
+            background-color: var(--light-bg);
+            border-radius: 16px;
+            overflow: hidden;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
-        .social-icons a {
+        /* ==================== SLIDE 1: HERO INTRO ==================== */
+        .slide-hero {
+            background-color: #ffffff;
             display: flex;
-            justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 50%;
-            color: #FFD700;
-            font-size: 17px;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            justify-content: space-between;
+            padding: 50px;
         }
 
-        .social-icons a:hover {
-            background: linear-gradient(135deg, #FFD700, #D4AF37);
-            color: #0f0a00;
-            box-shadow: 0 0 18px rgba(255, 215, 0, 0.8);
-            transform: translateY(-3px);
+        .hero-left-stripe {
+            position: absolute;
+            left: 0;
+            top: 15%;
+            width: 12px;
+            height: 70%;
+            background-color: var(--primary-yellow);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .hero-content {
+            max-width: 50%;
+            margin-left: 20px;
+        }
+
+        .hero-content h3 {
+            color: var(--primary-yellow);
+            font-size: 20px;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin: 10px 0 15px 0;
+            line-height: 1.1;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--primary-yellow);
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn-dark {
+            background-color: var(--text-dark);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .hero-right {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-frame {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid var(--primary-yellow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .arc-decoration {
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border: 2px dashed var(--primary-yellow);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* ==================== COMMON SIDEBAR ==================== */
+        .sidebar {
+            width: 220px;
+            background-color: var(--dark-charcoal);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-profile {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-yellow);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-menu li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            display: block;
+            text-align: center;
+            padding: 6px 0;
+            transition: all 0.3s;
+        }
+
+        .sidebar-menu li.active a,
+        .sidebar-menu li a:hover {
+            color: var(--primary-yellow);
+            background-color: rgba(244, 180, 0, 0.1);
+            border-radius: 6px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary-yellow);
+        }
+
+        /* ==================== ABOUT ME ==================== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .service-box {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .service-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--primary-yellow);
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat-card {
+            background-color: var(--dark-charcoal);
+            color: #fff;
+            border-radius: 50%;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .stat-card h4 {
+            color: var(--primary-yellow);
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .stat-card p {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* ==================== PORTFOLIO SHOWCASE ==================== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .portfolio-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+        }
+
+        .portfolio-item-info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .portfolio-item-info h5 {
+            font-size: 12px;
+            color: var(--text-dark);
+        }
+
+        .portfolio-item-info span {
+            font-size: 10px;
+            color: var(--primary-yellow);
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Profile Picture -->
-        <img src="profile.jpg" alt="LEMMA ASEFA KEBEDE" class="profile-img">
-        
-        <!-- Name in Metallic Gold -->
-        <h1>LEMMA ASEFA KEBEDE</h1>
-
-        <!-- Professional Expertise Badges -->
-        <div class="roles-grid">
-            <div class="role-card">
-                <i class="fas fa-bullhorn"></i>
-                <span>Digital Marketer</span>
+    <!-- SLIDE 1: HERO INTRO -->
+    <div class="slide slide-hero">
+        <div class="hero-left-stripe"></div>
+        <div class="hero-content">
+            <h3>HI THERE!</h3>
+            <h1>I'M LEMMA ASEFA</h1>
+            <div class="hero-tags">
+                <span class="tag">Graphic Designer</span>
+                <span class="tag">Photographer</span>
+                <span class="tag">Video Editor</span>
             </div>
-            <div class="role-card">
-                <i class="fas fa-photo-film"></i>
-                <span>Video Editor</span>
-            </div>
-            <div class="role-card">
-                <i class="fas fa-video"></i>
-                <span>Cinematographer</span>
-            </div>
-            <div class="role-card">
-                <i class="fas fa-palette"></i>
-                <span>Graphic Designer</span>
+            <p class="hero-desc">
+                Specializing in visual strategy, media creation, and digital brand development to elevate your agency and client projects.
+            </p>
+            <a href="#about" class="btn-dark">MORE ABOUT ME</a>
+        </div>
+        <div class="hero-right">
+            <div class="arc-decoration"></div>
+            <div class="profile-frame">
+                <img src="profile.jpg" alt="Lemma Asefa Kebede">
             </div>
         </div>
+    </div>
 
-        <div class="divider"></div>
+    <!-- SLIDE 2: ABOUT ME -->
+    <div class="slide">
+        <div class="sidebar">
+            <div class="sidebar-profile">
+                <img src="profile.jpg" alt="Profile">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#">HOME</a></li>
+                <li class="active"><a href="#">ABOUT ME</a></li>
+                <li><a href="#">RESUME</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h2 class="section-title">ABOUT ME</h2>
+            <p style="font-size: 13px; color: #555; margin-bottom: 20px;">
+                I am <strong>Lemma Asefa Kebede</strong>, a passionate Graphic Designer, Video Editor, and Digital Marketer.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <h4 style="margin-bottom: 12px; font-size: 14px; text-transform: uppercase;">What I Do?</h4>
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fas fa-palette"></i></div>
+                        <div>
+                            <h5 style="font-size: 13px;">Graphic Design</h5>
+                            <p style="font-size: 11px; color: #777;">Brand identity, logos, and promotional visuals.</p>
+                        </div>
+                    </div>
+                    <div class="service-box">
+                        <div class="service-icon"><i class="fas fa-video"></i></div>
+                        <div>
+                            <h5 style="font-size: 13px;">Video Editing & Cinematography</h5>
+                            <p style="font-size: 11px; color: #777;">High-quality video production using Adobe Premiere Pro.</p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Social Media Links -->
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/lemma-asefa-b9814842a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:asefalemma.official@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://wa.me/251909506573" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/qaroodigital_agency?stkn=MXB6dHB6czhucGJuNQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/share/1DpVcsq5rq/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.tiktok.com/@lemma.official5?_r=1&_t=ZS-99lKBBG9gcX" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.snapchat.com/add/qaroodigital?share_id=29tkCyabXXU&locale=en-GB" target="_blank" title="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
-            <a href="https://www.youtube.com/@lemmaasefa-09" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://pin.it/2qiOYLAdX" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <div>
+                    <h4 style="margin-bottom: 12px; font-size: 14px; text-transform: uppercase;">Key Metrics</h4>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>5+</h4>
+                            <p>Skill Disciplines</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>50+</h4>
+                            <p>Projects Done</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>100%</h4>
+                            <p>Quality Focus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: PORTFOLIO SHOWCASE -->
+    <div class="slide">
+        <div class="sidebar">
+            <div class="sidebar-profile">
+                <img src="profile.jpg" alt="Profile">
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="#">RESUME</a></li>
+                <li class="active"><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h2 class="section-title">PORTFOLIO</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=400&q=80" alt="Graphic Design">
+                    <div class="portfolio-item-info">
+                        <h5>Brand Identity</h5>
+                        <span>Graphic Design</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80" alt="Video Editing">
+                    <div class="portfolio-item-info">
+                        <h5>Commercial Video</h5>
+                        <span>Video Editing</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a312169949d?auto=format&fit=crop&w=400&q=80" alt="Digital Marketing">
+                    <div class="portfolio-item-info">
+                        <h5>Digital Campaign</h5>
+                        <span>Marketing</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
