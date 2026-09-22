@@ -15,12 +15,12 @@
         }
 
         body {
-            /* Background image set to background.jpg */
+            /* Background Image */
             background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: #0b0f19; /* Fallback dark background */
+            background-color: #080705;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,41 +29,45 @@
             padding: 20px;
         }
 
-        /* Glassmorphism Container */
+        /* Premium Gold Glassmorphism Card Container */
         .container {
-            background: rgba(10, 15, 30, 0.72);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: linear-gradient(145deg, rgba(25, 20, 8, 0.88), rgba(10, 8, 3, 0.94));
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             padding: 35px 25px;
             border-radius: 24px;
             text-align: center;
             max-width: 480px;
             width: 100%;
-            box-shadow: 0 8px 32px rgba(0, 210, 255, 0.3);
-            border: 1px solid rgba(0, 210, 255, 0.35);
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.35), 0 0 15px rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.55);
         }
 
-        /* Profile Picture */
+        /* Profile Picture with Golden Glow Border */
         .profile-img {
             width: 140px;
             height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #00d2ff;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+            border: 4px solid #D4AF37;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
             margin-bottom: 18px;
         }
 
+        /* Gold Metallic Title Text */
         h1 {
             font-size: 24px;
             font-weight: 700;
             letter-spacing: 2px;
             margin-bottom: 25px;
             text-transform: uppercase;
-            color: #ffffff;
+            background: linear-gradient(135deg, #FFF5C0, #D4AF37, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
         }
 
-        /* Professional Expertise Badges */
+        /* Gold Expertise Badges Grid */
         .roles-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -72,8 +76,8 @@
         }
 
         .role-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.35);
             padding: 12px 8px;
             border-radius: 12px;
             display: flex;
@@ -84,30 +88,30 @@
         }
 
         .role-card:hover {
-            background: rgba(0, 210, 255, 0.25);
-            border-color: #00d2ff;
+            background: rgba(212, 175, 55, 0.22);
+            border-color: #FFD700;
             transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
         }
 
         .role-card i {
             font-size: 22px;
-            color: #00d2ff;
+            color: #FFD700;
         }
 
         .role-card span {
             font-size: 11px;
             font-weight: 600;
-            color: #ffffff;
+            color: #F8F1E5;
         }
 
         .divider {
             height: 1px;
-            background: rgba(255, 255, 255, 0.15);
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
             margin: 18px 0;
         }
 
-        /* Social Media Icons */
+        /* Gold Social Media Buttons */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -121,19 +125,19 @@
             align-items: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 50%;
-            color: #ffffff;
+            color: #FFD700;
             font-size: 17px;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .social-icons a:hover {
-            background: #00d2ff;
-            color: #000000;
-            box-shadow: 0 0 15px #00d2ff;
+            background: linear-gradient(135deg, #FFD700, #D4AF37);
+            color: #0f0a00;
+            box-shadow: 0 0 18px rgba(255, 215, 0, 0.8);
             transform: translateY(-3px);
         }
     </style>
@@ -144,10 +148,10 @@
         <!-- Profile Picture -->
         <img src="profile.jpg" alt="LEMMA ASEFA KEBEDE" class="profile-img">
         
-        <!-- Name -->
+        <!-- Name in Metallic Gold -->
         <h1>LEMMA ASEFA KEBEDE</h1>
 
-        <!-- Expertise Badges with Icons -->
+        <!-- Professional Expertise Badges -->
         <div class="roles-grid">
             <div class="role-card">
                 <i class="fas fa-bullhorn"></i>
@@ -169,13 +173,17 @@
 
         <div class="divider"></div>
 
-        <!-- Social Links -->
+        <!-- Social Media Links -->
         <div class="social-icons">
-            <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://t.me/" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/lemma-asefa-b9814842a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:asefalemma.official@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/251909506573" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/qaroodigital_agency?stkn=MXB6dHB6czhucGJuNQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DpVcsq5rq/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@lemma.official5?_r=1&_t=ZS-99lKBBG9gcX" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/qaroodigital?share_id=29tkCyabXXU&locale=en-GB" target="_blank" title="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="https://www.youtube.com/@lemmaasefa-09" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pin.it/2qiOYLAdX" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
         </div>
     </div>
 
