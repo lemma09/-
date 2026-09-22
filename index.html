@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEMMA ASEFA KEBEDE - Portfolio</title>
+    <!-- FontAwesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Background image set here */
+            background-image: url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        /* Glassmorphism effect for the main container to make text readable */
+        .container {
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 210, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Profile Image Styling (Circular) */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00d2ff;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        p.title {
+            font-size: 16px;
+            color: #b3e5fc;
+            margin-bottom: 25px;
+        }
+
+        /* Social Media Icons Styling */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%; /* Makes the icons circular */
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #00d2ff;
+            color: #000;
+            box-shadow: 0 0 15px #00d2ff;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive adjustments for smaller phones */
+        @media (max-width: 400px) {
+            .profile-img {
+                width: 130px;
+                height: 130px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Using the provided Profile image -->
+        <img src="Profile.jpg" alt="Lemma Asefa Kebede" class="profile-img">
+        
+        <h1>LEMMA ASEFA KEBEDE</h1>
+        <p class="title">Founder & Digital Specialist | Qaroo Digital Agency</p>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/lemma-asefa-b9814842a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:asefalemma.official@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/251909506573" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/qaroodigital_agency?stkn=MXB6dHB6czhucGJuNQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1DpVcsq5rq/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@lemma.official5?_r=1&_t=ZS-99lKBBG9gcX" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/qaroodigital?share_id=29tkCyabXXU&locale=en-GB" target="_blank" title="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="https://www.youtube.com/@lemmaasefa-09" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://pin.it/2qiOYLAdX" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
