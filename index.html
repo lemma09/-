@@ -15,53 +15,110 @@
         }
 
         body {
-            /* Background image set to bg.jpg */
-            background-image: url('bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             color: #ffffff;
             padding: 20px;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* Glassmorphism container */
+        /* Dual Background Overlay system */
+        .bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: opacity 1s ease-in-out;
+            z-index: -2;
+        }
+
+        .bg1 {
+            background-image: url('bg1.jpg');
+            opacity: 1;
+        }
+
+        .bg2 {
+            background-image: url('bg2.jpg');
+            opacity: 0;
+        }
+
+        /* Dark tint to keep content legible while background stays visible */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        /* Background Switcher Button */
+        .bg-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(10, 15, 30, 0.75);
+            border: 1px solid #00d2ff;
+            color: #00d2ff;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+        }
+
+        .bg-btn:hover {
+            background: #00d2ff;
+            color: #000;
+            box-shadow: 0 0 15px #00d2ff;
+        }
+
+        /* Glassmorphism Container (More transparent so background shines) */
         .container {
-            background: rgba(10, 15, 30, 0.82);
-            backdrop-filter: blur(12px);
+            background: rgba(10, 15, 30, 0.65);
+            backdrop-filter: blur(10px);
             padding: 35px 25px;
             border-radius: 24px;
             text-align: center;
             max-width: 480px;
             width: 100%;
             box-shadow: 0 8px 32px rgba(0, 210, 255, 0.3);
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            border: 1px solid rgba(0, 210, 255, 0.35);
         }
 
-        /* Profile Image */
+        /* Profile Picture */
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 145px;
+            height: 145px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #00d2ff;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-            margin-bottom: 15px;
+            box-shadow: 0 0 22px rgba(0, 210, 255, 0.6);
+            margin-bottom: 18px;
         }
 
         h1 {
             font-size: 24px;
             font-weight: 700;
             letter-spacing: 2px;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             text-transform: uppercase;
             color: #ffffff;
         }
 
-        /* Professional Expertise Cards with Icons */
+        /* Professional Expertise Cards */
         .roles-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -70,8 +127,8 @@
         }
 
         .role-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 210, 255, 0.35);
             padding: 12px 8px;
             border-radius: 12px;
             display: flex;
@@ -85,7 +142,7 @@
             background: rgba(0, 210, 255, 0.25);
             border-color: #00d2ff;
             transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
         }
 
         .role-card i {
@@ -101,7 +158,7 @@
 
         .divider {
             height: 1px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             margin: 18px 0;
         }
 
@@ -119,8 +176,8 @@
             align-items: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 50%;
             color: #ffffff;
             font-size: 17px;
@@ -134,9 +191,28 @@
             box-shadow: 0 0 15px #00d2ff;
             transform: translateY(-3px);
         }
+
+        @media (max-width: 480px) {
+            .bg-btn {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Background Images -->
+    <div class="bg-layer bg1" id="bg1"></div>
+    <div class="bg-layer bg2" id="bg2"></div>
+    <div class="overlay"></div>
+
+    <!-- Toggle Button to Switch Backgrounds -->
+    <button class="bg-btn" onclick="switchBackground()">
+        <i class="fas fa-image"></i> Background Jijjiiri
+    </button>
 
     <div class="container">
         <!-- Profile Picture -->
@@ -180,6 +256,28 @@
             <a href="https://pin.it/2qiOYLAdX" target="_blank" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
         </div>
     </div>
+
+    <script>
+        let currentBg = 1;
+
+        function switchBackground() {
+            const bg1 = document.getElementById('bg1');
+            const bg2 = document.getElementById('bg2');
+
+            if (currentBg === 1) {
+                bg1.style.opacity = '0';
+                bg2.style.opacity = '1';
+                currentBg = 2;
+            } else {
+                bg1.style.opacity = '1';
+                bg2.style.opacity = '0';
+                currentBg = 1;
+            }
+        }
+
+        // Auto change background every 8 seconds
+        setInterval(switchBackground, 8000);
+    </script>
 
 </body>
 </html>
